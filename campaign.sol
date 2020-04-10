@@ -14,11 +14,7 @@ contract Campaign {
      * Uint of the mimimum amount that
      * can be accepted in this campaign.
      */
-    uint minimumContribution;
-    /**
-     * Array that stores all of the people
-     * that have contributed to the campaign.
-     */
+    uint public minimumContribution;
     address[] public approvers;
     
     /**
@@ -35,11 +31,6 @@ contract Campaign {
         minimumContribution = minimum;
     }
     
-    /**
-     * @dev Function that accepts ether over the
-     * minimum ammount to then store msg.sender
-     * in the approvers array.
-     */
     function contribute() public payable {
         require(msg.value > minimumContribution);
         

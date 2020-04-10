@@ -6,6 +6,28 @@ pragma solidity ^0.4.17;
 contract Campaign {
     
     /**
+     * New struct type storing the
+     * requests that the manager address
+     * will submit for approval of how to
+     * use contributions.
+     */  
+    struct Request {
+        // Describes why the request
+        // is being created.
+        string description;
+        // Amount of money that the
+        // manager wants to send to
+        // the vendor.
+        uint value;
+        // Address that the money will
+        // be sent to.
+        address recipient;
+        // True if request has already
+        // been processed.
+        bool complete;
+    }
+    
+    /**
      * Address of person who created the
      * campaing contract.
      */
@@ -15,6 +37,10 @@ contract Campaign {
      * can be accepted in this campaign.
      */
     uint public minimumContribution;
+    /**
+     * Array storing all of the addresses
+     * that have contributed.
+     */
     address[] public approvers;
     
     /**
@@ -31,6 +57,10 @@ contract Campaign {
         minimumContribution = minimum;
     }
     
+    /**
+     * @dev Function that will serve to accept
+     * contributions in the form of ether.
+     */
     function contribute() public payable {
         require(msg.value > minimumContribution);
         

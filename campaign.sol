@@ -26,6 +26,11 @@ contract Campaign {
         // been processed.
         bool complete;
     }
+    /**
+     * Array storing all of the requests
+     * that have been submitted.
+     */
+    Request[] public requests;
     
     /**
      * Address of person who created the
@@ -42,6 +47,16 @@ contract Campaign {
      * that have contributed.
      */
     address[] public approvers;
+    
+    /**
+     * @dev Guarantees msg.sender is the same
+     * address that is stored under
+     * the manager variable.
+     */
+    modifier restricted() {
+        require(msg.sender == manager);
+        _;
+    }
     
     /**
      * @dev The constructor function that

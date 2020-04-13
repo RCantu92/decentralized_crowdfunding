@@ -104,9 +104,31 @@ contract Campaign {
             description: _description,
             value: _value,
             recipient: _recipient,
-            complete: false
+            complete: false,
+            approvalCount: 0
         });
         
         requests.push(newRequest);
+    }
+    
+    /**
+     * @dev Function that approves a request
+     * made by the manager address.
+     * @param _index index of the request being
+     * approved.
+     */
+    function approveRequest(uint _index) public {
+        Request storage request = requests[index];
+        
+        // Verifyind the msg.sender can approave
+        // and hasn't already done so.
+        require(approvers[msg.sender]);
+        require(!request.approvals[msg.sender]);
+        
+        // Make sure that msg.sender cannot
+        // approve same request again. Increase
+        // requests total approval count.
+        request.approvals[msg.sender] = true;
+        requests.approvalCount++;
     }
 }

@@ -43,10 +43,10 @@ contract Campaign {
      */
     uint public minimumContribution;
     /**
-     * Array storing all of the addresses
-     * that have contributed.
+     * Mapping storing whether or not an 
+     * addresses has contributed.
      */
-    address[] public approvers;
+    mapping(address => bool) public approvers;
     
     /**
      * @dev Guarantees msg.sender is the same
@@ -79,7 +79,7 @@ contract Campaign {
     function contribute() public payable {
         require(msg.value > minimumContribution);
         
-        approvers.push(msg.sender);
+        approvers[msg.sender] = true;
     }
 
     /**
@@ -92,7 +92,9 @@ contract Campaign {
      * of _value.
      */
     function createRequest(string _description, uint _value, address _recipient) public restricted {
-        Request newRequest = Request({ 
+        // Creating a new variable that will have a
+        // Request named newRequest.
+        Request memory newRequest = Request({ 
             description: _description,
             value: _value,
             recipient: _recipient,

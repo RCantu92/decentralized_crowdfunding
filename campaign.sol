@@ -25,6 +25,12 @@ contract Campaign {
         // True if request has already
         // been processed.
         bool complete;
+        // Variable to keep count of 'yes'
+        // votes for a particular Request.
+        uint approvalCount;
+        // Mapping storing what each contributor
+        // voted on the Request.
+        mapping(address => bool) approvals;
     }
     /**
      * Array storing all of the requests

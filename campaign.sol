@@ -1,6 +1,36 @@
 pragma solidity ^0.4.17;
 
 /**
+ * @title Campaign Factory
+ */
+contract CampaignFactory {
+    // Array that stores all of the addresses
+    // of deployed campaigns.
+    address[] public deployedCampaigns;
+    
+    /**
+     * @dev Function that creates a new 
+     * campaign from the Campaign contract.
+     * @param _minimum amount needed to be able
+     * to contribute to the newly created campaign.
+     */
+    function createCampaign(uint _minimum) public {
+        address newCampaign = new Campaign(_minimum, msg.sender);
+        
+        deployedCampaigns.push(newCampaign);
+    }
+    
+    /**
+     * @dev Function that returns the addresses of all
+     * deployed campaigns.
+     * @return array of deployed campaign addresses.
+     */
+    function getDeployedCampaigns() public view returns(address[]) {
+        return deployedCampaigns;
+    }
+}
+
+/**
  * @title Campaign
  */
 contract Campaign {
@@ -77,9 +107,11 @@ contract Campaign {
      * variable.
      * @param _minimum the uint to be saved under
      * minimumContribution.
+     * @param _creator the address of the campaign
+     * creator.
      */
-    constructor(uint _minimum) public {
-        manager = msg.sender;
+    constructor(uint _minimum, address _creator) public {
+        manager = _creator;
         minimumContribution = _minimum;
     }
     
@@ -146,7 +178,7 @@ contract Campaign {
      * finalized.
      */
     function finalizeRequest(uint _index) public restricted {
-        Request storage request = requests.[_index];
+        Request storage request = requests[_index];
         
         require(request.approvalCount > (approversCount / 2));
         require(!request.complete);

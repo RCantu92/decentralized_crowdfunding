@@ -20,7 +20,7 @@
 
 ## Built With
 
-
+* [Solidity, v.4.17.0](https://solidity.readthedocs.io/en/v0.4.17/) - Smart Contract programming language used.
 
 ## Authors
 

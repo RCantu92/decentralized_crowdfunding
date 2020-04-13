@@ -53,6 +53,11 @@ contract Campaign {
      * addresses has contributed.
      */
     mapping(address => bool) public approvers;
+    /**
+     * Uint to keep count of the number of
+     * "yes" votes.
+     */
+    uint public approversCount;
     
     /**
      * @dev Guarantees msg.sender is the same
@@ -73,7 +78,7 @@ contract Campaign {
      * @param _minimum the uint to be saved under
      * minimumContribution.
      */
-    function Campaign(uint _minimum) public {
+    constructor(uint _minimum) public {
         manager = msg.sender;
         minimumContribution = _minimum;
     }
@@ -86,6 +91,7 @@ contract Campaign {
         require(msg.value > minimumContribution);
         
         approvers[msg.sender] = true;
+        approversCount++;
     }
 
     /**
@@ -118,7 +124,7 @@ contract Campaign {
      * approved.
      */
     function approveRequest(uint _index) public {
-        Request storage request = requests[index];
+        Request storage request = requests[_index];
         
         // Verifyind the msg.sender can approave
         // and hasn't already done so.
@@ -129,6 +135,23 @@ contract Campaign {
         // approve same request again. Increase
         // requests total approval count.
         request.approvals[msg.sender] = true;
-        requests.approvalCount++;
+        request.approvalCount++;
+    }
+    
+    /**
+     * @dev Function that finalizes a request
+     * made by the manager address and sends the
+     * funds to the recipient address.
+     * @param _index index of the request being
+     * finalized.
+     */
+    function finalizeRequest(uint _index) public restricted {
+        Request storage request = requests.[_index];
+        
+        require(request.approvalCount > (approversCount / 2));
+        require(!request.complete);
+        
+        request.recipient.transfer(request.value);
+        request.complete = true;
     }
 }

@@ -64,12 +64,12 @@ contract Campaign {
      * the previously declared manager variable
      * and the uint to the declared minimumContribution
      * variable.
-     * @param minimum the uint to be saved under
+     * @param _minimum the uint to be saved under
      * minimumContribution.
      */
-    function Campaign(uint minimum) public {
+    function Campaign(uint _minimum) public {
         manager = msg.sender;
-        minimumContribution = minimum;
+        minimumContribution = _minimum;
     }
     
     /**
@@ -80,5 +80,25 @@ contract Campaign {
         require(msg.value > minimumContribution);
         
         approvers.push(msg.sender);
+    }
+
+    /**
+     * @dev Function that creates a new struct of
+     * the Request type.
+     * @param _description descriptor for the 
+     * Request being created.
+     * @param _value amount of money being managed.
+     * @param _recipient address of the recipient
+     * of _value.
+     */
+    function createRequest(string _description, uint _value, address _recipient) public restricted {
+        Request newRequest = Request({ 
+            description: _description,
+            value: _value,
+            recipient: _recipient,
+            complete: false
+        });
+        
+        requests.push(newRequest);
     }
 }

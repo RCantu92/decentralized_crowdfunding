@@ -47,7 +47,7 @@ fs.ensureDirSync(buildPath);
 // both contracts in the campaign.sol file.
 for (let contract in output) {
     fs.outputJsonSync(
-        path.resolve(buildPath, contract + '.json'),
+        path.resolve(buildPath, contract.replace(':', '') + '.json'),
         output[contract]
     );
 }

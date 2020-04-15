@@ -3,8 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "ganache-cli": "^6.9.1",
+    "solc": "^0.4.17",
+    "web3": "^1.0.0-beta.26"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.1"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -15,9 +27,5 @@
   "bugs": {
     "url": "https://github.com/RCantu92/decentralized_crowd_funding/issues"
   },
-  "homepage": "https://github.com/RCantu92/decentralized_crowd_funding#readme",
-  "dependencies": {
-    "fs-extra": "^7.0.1",
-    "solc": "^0.4.17"
-  }
+  "homepage": "https://github.com/RCantu92/decentralized_crowd_funding#readme"
 }

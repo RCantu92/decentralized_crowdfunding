@@ -35,7 +35,7 @@ npm install --save fs-extra
 web3
 
 ```
-npm install --save web3@1.0.0-beta.35
+npm install --save web3@1.0.0-beta.26
 ```
 
 ## Running the tests
@@ -54,7 +54,8 @@ npm install --save web3@1.0.0-beta.35
 * [Mocha](https://mochajs.org/) - JavaScript test framework.
 * [Ganache CLI](https://www.npmjs.com/package/ganache-cli) - The command line version of Ganache, your personal blockchain for Ethereum development.
 * [fs-extra](https://github.com/jprichardson/node-fs-extra) - File system methods that aren't included in the native 'fs' module and adds promise support to the fs methods.
-* [web3](https://github.com/ethereum/web3.js/) - This is the Ethereum JavaScript API which connects to the Generic JSON-RPC spec. Used v.1.0.0-beta.35.
+* [web3](https://github.com/ethereum/web3.js/) - This is the Ethereum JavaScript API which connects to the Generic JSON-RPC spec. Used v.1.0.0-beta.26.
+* [Assert](https://nodejs.org/api/assert.html) - Module that provides a set of assertion functions for verifying invariants.
 
 ## Authors
 

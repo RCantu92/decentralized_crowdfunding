@@ -13,7 +13,7 @@ const web3 = new Web3(ganache.provider());
 // Campaign contracts from their respective
 // JSON files.
 const compiledFactory = require('../ethereum/build/CampaignFactory.json');
-const compiledCampaign = require('..ethereum/build/campaign.json');
+const compiledCampaign = require('../ethereum/build/campaign.json');
 
 // Declaring two variables with no values.
 let accounts;
@@ -38,4 +38,28 @@ beforeEach(async () => {
     factory = await new web3.eth.Contract(JSON.parse(compiledFactory.interface))
         .deploy({ data: compiledFactory.bytecode })
         .send({ from: accounts[0], gas: '1000000' });
+
+    // Creating a new campaign using the first account
+    // generated from the local ganache blockchain.
+    await factory.methods.createCampaign('100').send({
+        from: accounts[0],
+        gas: '1000000',
+    });
+
+    // Saving the address of the campaing to the previously
+    // initialized variable.
+    [campaignAddress] = await factory.methods.getDeployedCampaigns().call();
+    // Create get the campaign interface and address and
+    // save it to previously initialized variable.
+    campaign = await new web3.eth.Contract(
+        JSON.parse(compiledCampaign.interface),
+        campaignAddress
+    );
+});
+
+describe('Campaigns', () => {
+    it('deploys a factory and a campaign', () => {
+        assert.ok(factory.options.address);
+        assert.ok(campaign.options.address);
+    });
 });

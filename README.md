@@ -35,7 +35,7 @@ npm install --save fs-extra
 web3
 
 ```
-npm install --save web3@v.1.0.0-beta.35
+npm install --save web3@1.0.0-beta.35
 ```
 
 ## Running the tests

@@ -14,7 +14,7 @@ What things you need to install the software and how to install them
 solc
 
 ```
-npm install solc
+npm install solc@0.4.17
 ```
 
 Mocha

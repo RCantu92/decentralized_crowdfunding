@@ -58,16 +58,19 @@ beforeEach(async () => {
 });
 
 describe('Campaigns', () => {
+    // Confirms that both contracts can be deployed.
     it('deploys a factory and a campaign', () => {
         assert.ok(factory.options.address);
         assert.ok(campaign.options.address);
     });
 
+    // Confirms it can save address as manager.
     it('marks caller as the campaign manager.', async () => {
         const manager = await campaign.methods.manager().call();
         assert.equal(accounts[0], manager);
     });
 
+    // Confirms contract can accept contributions
     it('allows people to contribute money and marks them as approvers', async () => {
         await campaign.methods.contribute().send({ 
             value: '200',
@@ -77,6 +80,8 @@ describe('Campaigns', () => {
         assert(isContributor);
     });
 
+    // Confirms the minimum contribution limit is
+    // set in place.
     it('requires a minimum contribution', async () => {
         try {
             await campaign.methods.contribute().send({
@@ -89,6 +94,8 @@ describe('Campaigns', () => {
         }
     });
 
+    // Confirms that manager address can submit a
+    // a request to be voted on.
     it('allows a manager to make a payment request', async () => {
         await campaign.methods
         .createRequest('Buy batteries', '100', accounts[1])
@@ -101,6 +108,8 @@ describe('Campaigns', () => {
         assert.equal('Buy batteries', request.description);
     });
 
+    // End-to-end test to confirm the request
+    // process works as a whole
     it('processes requests', async () => {
         await campaign.methods.contribute().send({
             from: accounts[0],

@@ -2,7 +2,8 @@
 const HDWalletProvider = require('truffle-hdwallet-provider');
 // Load in the web3 module
 const Web3 = require('web3');
-// 
+// Load in compiled CampaignFactory
+// contract from JSON file.
 const compiledFactory = require('./build/CampaignFactory.json');
 
 /**
@@ -35,9 +36,10 @@ const deploy = async () => {
 
     /**
      * @dev Saving the instance of the deployed contract.
-     * @param interface ABI from compiled contract.
-     * Used JSON.parse because Contract() requires JavaScript object.
-     * @param data contract's bytecode.
+     * @param compileFactory.interface ABI from compiled
+     * CampaignFactory contract. Used JSON.parse because
+     * Contract() requires JavaScript object.
+     * @param data compiled contract's bytecode.
      * @param gas fee paid to the network to run code. Counted in wei.
      * @param from account from which gas is being paid from.
      */

@@ -37,6 +37,11 @@ web3
 ```
 npm install --save web3@1.0.0-beta.26
 ```
+truffle-hdwallet-provider
+
+```
+npm install --save truffle-hdwallet-provider@0.0.3
+```
 
 ## Running the tests
 
@@ -56,6 +61,7 @@ npm install --save web3@1.0.0-beta.26
 * [fs-extra](https://github.com/jprichardson/node-fs-extra) - File system methods that aren't included in the native 'fs' module and adds promise support to the fs methods.
 * [web3](https://github.com/ethereum/web3.js/) - This is the Ethereum JavaScript API which connects to the Generic JSON-RPC spec. Used v.1.0.0-beta.26.
 * [Assert](https://nodejs.org/api/assert.html) - Module that provides a set of assertion functions for verifying invariants.
+* [truffle-hdwallet-provider, v.0.0.3](https://github.com/trufflesuite/truffle-hdwallet-provider) - HD Wallet-enabled Web3 provider. Used to sign transactions for addresses derived from a 12-word mnemonic.
 
 ## Authors
 

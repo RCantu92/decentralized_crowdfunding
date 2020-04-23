@@ -42,6 +42,20 @@ truffle-hdwallet-provider
 ```
 npm install --save truffle-hdwallet-provider@0.0.3
 ```
+Next.js
+```
+npm install --save next@4.1.4
+```
+React
+
+```
+npm install --save react
+```
+React DOM
+
+```
+npm install --save react-dom
+```
 
 ## Running the tests
 
@@ -62,6 +76,8 @@ npm install --save truffle-hdwallet-provider@0.0.3
 * [web3](https://github.com/ethereum/web3.js/) - This is the Ethereum JavaScript API which connects to the Generic JSON-RPC spec. Used v.1.0.0-beta.26.
 * [Assert](https://nodejs.org/api/assert.html) - Module that provides a set of assertion functions for verifying invariants.
 * [truffle-hdwallet-provider, v.0.0.3](https://github.com/trufflesuite/truffle-hdwallet-provider) - HD Wallet-enabled Web3 provider. Used to sign transactions for addresses derived from a 12-word mnemonic.
+* [React](https://reactjs.org/) - JavaScript library for building user interfaces.
+* [Next.js, v.4.1.4](https://nextjs.org/) - ;
 
 ## Authors
 

@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _web = require('./web3');
+var _web = require('./web3.js');
 
 var _web2 = _interopRequireDefault(_web);
 

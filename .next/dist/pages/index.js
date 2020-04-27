@@ -55,7 +55,19 @@ var CampaignIndex = function (_Component) {
     }
 
     (0, _createClass3.default)(CampaignIndex, [{
-        key: 'componentDidMount',
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement('div', {
+                __source: {
+                    fileName: _jsxFileName,
+                    lineNumber: 13
+                }
+            }, this.props.campaigns[0]);
+        }
+    }], [{
+        key: 'getInitialProps',
+
+        // Next.js specific function
         value: function () {
             var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
                 var campaigns;
@@ -68,8 +80,7 @@ var CampaignIndex = function (_Component) {
 
                             case 2:
                                 campaigns = _context.sent;
-
-                                console.log(campaigns);
+                                return _context.abrupt('return', { campaigns: campaigns });
 
                             case 4:
                             case 'end':
@@ -79,26 +90,16 @@ var CampaignIndex = function (_Component) {
                 }, _callee, this);
             }));
 
-            function componentDidMount() {
+            function getInitialProps() {
                 return _ref.apply(this, arguments);
             }
 
-            return componentDidMount;
+            return getInitialProps;
         }()
-    }, {
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement('div', {
-                __source: {
-                    fileName: _jsxFileName,
-                    lineNumber: 12
-                }
-            }, 'Campaigns Index!');
-        }
     }]);
 
     return CampaignIndex;
 }(_react.Component);
 
 exports.default = CampaignIndex;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlJlYWN0IiwiQ29tcG9uZW50IiwiZmFjdG9yeSIsIkNhbXBhaWduSW5kZXgiLCJtZXRob2RzIiwiZ2V0RGVwbG95ZWRDYW1wYWlnbnMiLCJjYWxsIiwiY2FtcGFpZ25zIiwiY29uc29sZSIsImxvZyJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBUzs7OztBQUNoQixBQUFPLEFBQWE7Ozs7Ozs7OztJLEFBRWQ7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7dUNBRTBCLGtCQUFBLEFBQVEsUUFBUixBQUFnQix1QixBQUFoQixBQUF1Qzs7aUNBQXpEO0EscURBRU47O3dDQUFBLEFBQVEsSUFBUixBQUFZOzs7Ozs7Ozs7Ozs7Ozs7Ozs7aUNBR1AsQUFDTDttQ0FBTyxjQUFBOzs4QkFBQTtnQ0FBQTtBQUFBO0FBQUEsYUFBQSxFQUFQLEFBQU8sQUFDVjs7Ozs7QUFHTCxBLEFBWjRCOztrQkFZNUIsQUFBZSIsImZpbGUiOiJpbmRleC5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvVXNlcnMvcm9iZXJ0b2NhbnR1L3VkZW15X2V0aF9jb3Vyc2UvZGVjZW50cmFsaXplZF9jcm93ZF9mdW5kaW5nIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2luZGV4LmpzIl0sIm5hbWVzIjpbIlJlYWN0IiwiQ29tcG9uZW50IiwiZmFjdG9yeSIsIkNhbXBhaWduSW5kZXgiLCJwcm9wcyIsImNhbXBhaWducyIsIm1ldGhvZHMiLCJnZXREZXBsb3llZENhbXBhaWducyIsImNhbGwiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPLEFBQVM7Ozs7QUFDaEIsQUFBTyxBQUFhOzs7Ozs7Ozs7SSxBQUVkOzs7Ozs7Ozs7OztpQ0FRTyxBQUNMO21DQUFPLGNBQUE7OzhCQUFBO2dDQUFBLEFBQU07QUFBTjtBQUFBLGFBQUEsT0FBTSxBQUFLLE1BQUwsQUFBVyxVQUF4QixBQUFPLEFBQU0sQUFBcUIsQUFDckM7OzthQVREOzs7Ozs7Ozs7Ozt1Q0FFNEIsa0JBQUEsQUFBUSxRQUFSLEFBQWdCLHVCLEFBQWhCLEFBQXVDOztpQ0FBekQ7QTtpRUFFQyxFQUFFLFcsQUFBRjs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBLEFBTGEsQUFhNUI7O2tCQUFBLEFBQWUiLCJmaWxlIjoiaW5kZXguanM/ZW50cnkiLCJzb3VyY2VSb290IjoiL1VzZXJzL3JvYmVydG9jYW50dS91ZGVteV9ldGhfY291cnNlL2RlY2VudHJhbGl6ZWRfY3Jvd2RfZnVuZGluZyJ9

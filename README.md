@@ -78,6 +78,8 @@ npm install --save react-dom
 * [truffle-hdwallet-provider, v.0.0.3](https://github.com/trufflesuite/truffle-hdwallet-provider) - HD Wallet-enabled Web3 provider. Used to sign transactions for addresses derived from a 12-word mnemonic.
 * [React](https://reactjs.org/) - JavaScript library for building user interfaces.
 * [Next.js, v.4.1.4](https://nextjs.org/) - ;
+* [MetaMask](https://metamask.io/) - Browser based wallet used to connect to the Ethereum mainnet as well as testnets.
+* [Infura](https://infura.io/) - API used to access the Ethereum and IPFS networks.
 
 ## Authors
 

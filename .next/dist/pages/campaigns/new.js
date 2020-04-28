@@ -72,7 +72,8 @@ var CampaignNew = function (_Component) {
 
         return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = CampaignNew.__proto__ || (0, _getPrototypeOf2.default)(CampaignNew)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
             minmumContribution: '',
-            errorMessage: ''
+            errorMessage: '',
+            loading: false
         }, _this.onSubmit = function () {
             var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(event) {
                 var accounts;
@@ -82,33 +83,39 @@ var CampaignNew = function (_Component) {
                             case 0:
                                 event.preventDefault();
 
-                                _context.prev = 1;
-                                _context.next = 4;
+                                _this.setState({ loading: true, errorMessage: '' });
+
+                                _context.prev = 2;
+                                _context.next = 5;
                                 return _web2.default.eth.getAccounts();
 
-                            case 4:
+                            case 5:
                                 accounts = _context.sent;
-                                _context.next = 7;
+                                _context.next = 8;
                                 return _factory2.default.methods.createCampaign(_this.state.minmumContribution).send({
                                     from: accounts[0]
                                 });
 
-                            case 7:
-                                _context.next = 12;
+                            case 8:
+                                _context.next = 13;
                                 break;
 
-                            case 9:
-                                _context.prev = 9;
-                                _context.t0 = _context['catch'](1);
+                            case 10:
+                                _context.prev = 10;
+                                _context.t0 = _context['catch'](2);
 
                                 _this.setState({ errorMessage: _context.t0.message });
 
-                            case 12:
+                            case 13:
+
+                                _this.setState({ loading: false });
+
+                            case 14:
                             case 'end':
                                 return _context.stop();
                         }
                     }
-                }, _callee, _this2, [[1, 9]]);
+                }, _callee, _this2, [[2, 10]]);
             }));
 
             return function (_x) {
@@ -125,26 +132,26 @@ var CampaignNew = function (_Component) {
             return _react2.default.createElement(_Layout2.default, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 30
+                    lineNumber: 35
                 }
             }, _react2.default.createElement('h3', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 31
+                    lineNumber: 36
                 }
             }, 'Create a campaign'), _react2.default.createElement(_semanticUiReact.Form, { onSubmit: this.onSubmit, error: !!this.state.errorMessage, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 33
+                    lineNumber: 38
                 }
             }, _react2.default.createElement(_semanticUiReact.Form.Field, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 34
+                    lineNumber: 39
                 }
             }, _react2.default.createElement('label', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 35
+                    lineNumber: 40
                 }
             }, 'Minimum Contribution'), _react2.default.createElement(_semanticUiReact.Input, {
                 label: 'wei',
@@ -155,15 +162,15 @@ var CampaignNew = function (_Component) {
                 },
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 36
+                    lineNumber: 41
                 }
             })), _react2.default.createElement(_semanticUiReact.Message, { error: true, header: 'Oops!', content: this.state.errorMessage, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 44
+                    lineNumber: 49
                 }
-            }), _react2.default.createElement(_semanticUiReact.Button, { primary: true, __source: {
+            }), _react2.default.createElement(_semanticUiReact.Button, { loading: this.state.loading, primary: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 45
+                    lineNumber: 50
                 }
             }, 'Create!')));
         }
@@ -173,4 +180,4 @@ var CampaignNew = function (_Component) {
 }(_react.Component);
 
 exports.default = CampaignNew;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2NhbXBhaWducy9uZXcuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJDb21wb25lbnQiLCJGb3JtIiwiQnV0dG9uIiwiSW5wdXQiLCJNZXNzYWdlIiwiTGF5b3V0IiwiZmFjdG9yeSIsIndlYjMiLCJDYW1wYWlnbk5ldyIsInN0YXRlIiwibWlubXVtQ29udHJpYnV0aW9uIiwiZXJyb3JNZXNzYWdlIiwib25TdWJtaXQiLCJldmVudCIsInByZXZlbnREZWZhdWx0IiwiZXRoIiwiZ2V0QWNjb3VudHMiLCJhY2NvdW50cyIsIm1ldGhvZHMiLCJjcmVhdGVDYW1wYWlnbiIsInNlbmQiLCJmcm9tIiwic2V0U3RhdGUiLCJtZXNzYWdlIiwidGFyZ2V0IiwidmFsdWUiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7QUFBQSxBQUFPLEFBQVM7Ozs7QUFDaEIsQUFBUyxBQUFNLEFBQVEsQUFBTzs7QUFDOUIsQUFBTyxBQUFZOzs7O0FBQ25CLEFBQU8sQUFBYTs7OztBQUNwQixBQUFPLEFBQVU7Ozs7Ozs7OztJLEFBRVg7Ozs7Ozs7Ozs7Ozs7OzswTixBQUNGO2dDQUFRLEFBQ2dCLEFBQ3BCOzBCLEFBRkksQUFFVTtBQUZWLEFBQ0osaUIsQUFJSjtpR0FBVyxpQkFBQSxBQUFPLE9BQVA7b0JBQUE7OEVBQUE7OEJBQUE7eURBQUE7aUNBQ1A7c0NBRE8sQUFDUCxBQUFNOztnREFEQztnREFBQTt1Q0FJb0IsY0FBQSxBQUFLLElBSnpCLEFBSW9CLEFBQVM7O2lDQUExQjtBQUpILG9EQUFBO2dEQUFBO3lEQUtHLEFBQVEsUUFBUixBQUNMLGVBQWUsTUFBQSxBQUFLLE1BRGYsQUFDcUIsb0JBRHJCLEFBRUw7MENBQ1MsU0FSUCxBQUtHLEFBRUEsQUFDSSxBQUFTO0FBRGIsQUFDRixpQ0FIRTs7aUNBTEg7Z0RBQUE7QUFBQTs7aUNBQUE7Z0RBQUE7Z0VBV0g7O3NDQUFBLEFBQUssU0FBUyxFQUFFLGNBQWMsWUFYM0IsQUFXSCxBQUFjLEFBQW9COztpQ0FYL0I7aUNBQUE7Z0RBQUE7O0FBQUE7eUNBQUE7QTs7Ozs7Ozs7OztpQ0FlRjt5QkFDTDs7bUNBQ0ksQUFBQzs7OEJBQUQ7Z0NBQUEsQUFDSTtBQURKO0FBQUEsYUFBQSxrQkFDSSxjQUFBOzs4QkFBQTtnQ0FBQTtBQUFBO0FBQUEsZUFESixBQUNJLEFBRUEsc0NBQUEsQUFBQyx1Q0FBSyxVQUFVLEtBQWhCLEFBQXFCLFVBQVUsT0FBTyxDQUFDLENBQUMsS0FBQSxBQUFLLE1BQTdDLEFBQW1EOzhCQUFuRDtnQ0FBQSxBQUNJO0FBREo7K0JBQ0ssY0FBRCxzQkFBQSxBQUFNOzs4QkFBTjtnQ0FBQSxBQUNJO0FBREo7QUFBQSwrQkFDSSxjQUFBOzs4QkFBQTtnQ0FBQTtBQUFBO0FBQUEsZUFESixBQUNJLEFBQ0EseUNBQUEsQUFBQzt1QkFBRCxBQUNVLEFBQ047K0JBRkosQUFFa0IsQUFDZDt1QkFBTyxLQUFBLEFBQUssTUFIaEIsQUFHc0IsQUFDbEI7MEJBQVUseUJBQUE7MkJBQVMsT0FBQSxBQUFLLFNBQVMsRUFBRSxvQkFBb0IsTUFBQSxBQUFNLE9BQW5ELEFBQVMsQUFBYyxBQUFtQztBQUp4RTs7OEJBQUE7Z0NBSFIsQUFDSSxBQUVJLEFBUUo7QUFSSTtBQUNJLGlDQU9SLEFBQUMsMENBQVEsT0FBVCxNQUFlLFFBQWYsQUFBc0IsU0FBUSxTQUFTLEtBQUEsQUFBSyxNQUE1QyxBQUFrRDs4QkFBbEQ7Z0NBWEosQUFXSSxBQUNBO0FBREE7Z0NBQ0EsQUFBQyx5Q0FBTyxTQUFSOzhCQUFBO2dDQUFBO0FBQUE7ZUFoQlosQUFDSSxBQUdJLEFBWUksQUFJZjs7Ozs7QSxBQTFDcUIsQUE2QzFCOztrQkFBQSxBQUFlIiwiZmlsZSI6Im5ldy5qcz9lbnRyeSIsInNvdXJjZVJvb3QiOiIvVXNlcnMvcm9iZXJ0b2NhbnR1L3VkZW15X2V0aF9jb3Vyc2UvZGVjZW50cmFsaXplZF9jcm93ZF9mdW5kaW5nIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBhZ2VzL2NhbXBhaWducy9uZXcuanMiXSwibmFtZXMiOlsiUmVhY3QiLCJDb21wb25lbnQiLCJGb3JtIiwiQnV0dG9uIiwiSW5wdXQiLCJNZXNzYWdlIiwiTGF5b3V0IiwiZmFjdG9yeSIsIndlYjMiLCJDYW1wYWlnbk5ldyIsInN0YXRlIiwibWlubXVtQ29udHJpYnV0aW9uIiwiZXJyb3JNZXNzYWdlIiwibG9hZGluZyIsIm9uU3VibWl0IiwiZXZlbnQiLCJwcmV2ZW50RGVmYXVsdCIsInNldFN0YXRlIiwiZXRoIiwiZ2V0QWNjb3VudHMiLCJhY2NvdW50cyIsIm1ldGhvZHMiLCJjcmVhdGVDYW1wYWlnbiIsInNlbmQiLCJmcm9tIiwibWVzc2FnZSIsInRhcmdldCIsInZhbHVlIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTyxBQUFTOzs7O0FBQ2hCLEFBQVMsQUFBTSxBQUFRLEFBQU87O0FBQzlCLEFBQU8sQUFBWTs7OztBQUNuQixBQUFPLEFBQWE7Ozs7QUFDcEIsQUFBTyxBQUFVOzs7Ozs7Ozs7SSxBQUVYOzs7Ozs7Ozs7Ozs7Ozs7ME4sQUFDRjtnQ0FBUSxBQUNnQixBQUNwQjswQkFGSSxBQUVVLEFBQ2Q7cUIsQUFISSxBQUdLO0FBSEwsQUFDSixpQixBQUtKO2lHQUFXLGlCQUFBLEFBQU8sT0FBUDtvQkFBQTs4RUFBQTs4QkFBQTt5REFBQTtpQ0FDUDtzQ0FBQSxBQUFNLEFBRU47O3NDQUFBLEFBQUssU0FBUyxFQUFFLFNBQUYsQUFBVyxNQUFNLGNBSHhCLEFBR1AsQUFBYyxBQUErQjs7Z0RBSHRDO2dEQUFBO3VDQU1vQixjQUFBLEFBQUssSUFOekIsQUFNb0IsQUFBUzs7aUNBQTFCO0FBTkgsb0RBQUE7Z0RBQUE7eURBT0csQUFBUSxRQUFSLEFBQ0wsZUFBZSxNQUFBLEFBQUssTUFEZixBQUNxQixvQkFEckIsQUFFTDswQ0FDUyxTQVZQLEFBT0csQUFFQSxBQUNJLEFBQVM7QUFEYixBQUNGLGlDQUhFOztpQ0FQSDtnREFBQTtBQUFBOztpQ0FBQTtnREFBQTtnRUFhSDs7c0NBQUEsQUFBSyxTQUFTLEVBQUUsY0FBYyxZQWIzQixBQWFILEFBQWMsQUFBb0I7O2lDQUd0Qzs7c0NBQUEsQUFBSyxTQUFTLEVBQUUsU0FoQlQsQUFnQlAsQUFBYyxBQUFXOztpQ0FoQmxCO2lDQUFBO2dEQUFBOztBQUFBO3lDQUFBO0E7Ozs7Ozs7Ozs7aUNBbUJGO3lCQUNMOzttQ0FDSSxBQUFDOzs4QkFBRDtnQ0FBQSxBQUNJO0FBREo7QUFBQSxhQUFBLGtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBO0FBQUE7QUFBQSxlQURKLEFBQ0ksQUFFQSxzQ0FBQSxBQUFDLHVDQUFLLFVBQVUsS0FBaEIsQUFBcUIsVUFBVSxPQUFPLENBQUMsQ0FBQyxLQUFBLEFBQUssTUFBN0MsQUFBbUQ7OEJBQW5EO2dDQUFBLEFBQ0k7QUFESjsrQkFDSyxjQUFELHNCQUFBLEFBQU07OzhCQUFOO2dDQUFBLEFBQ0k7QUFESjtBQUFBLCtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBO0FBQUE7QUFBQSxlQURKLEFBQ0ksQUFDQSx5Q0FBQSxBQUFDO3VCQUFELEFBQ1UsQUFDTjsrQkFGSixBQUVrQixBQUNkO3VCQUFPLEtBQUEsQUFBSyxNQUhoQixBQUdzQixBQUNsQjswQkFBVSx5QkFBQTsyQkFBUyxPQUFBLEFBQUssU0FBUyxFQUFFLG9CQUFvQixNQUFBLEFBQU0sT0FBbkQsQUFBUyxBQUFjLEFBQW1DO0FBSnhFOzs4QkFBQTtnQ0FIUixBQUNJLEFBRUksQUFRSjtBQVJJO0FBQ0ksaUNBT1IsQUFBQywwQ0FBUSxPQUFULE1BQWUsUUFBZixBQUFzQixTQUFRLFNBQVMsS0FBQSxBQUFLLE1BQTVDLEFBQWtEOzhCQUFsRDtnQ0FYSixBQVdJLEFBQ0E7QUFEQTtnQ0FDQSxBQUFDLHlDQUFPLFNBQVMsS0FBQSxBQUFLLE1BQXRCLEFBQTRCLFNBQVMsU0FBckM7OEJBQUE7Z0NBQUE7QUFBQTtlQWhCWixBQUNJLEFBR0ksQUFZSSxBQUlmOzs7OztBLEFBL0NxQixBQWtEMUI7O2tCQUFBLEFBQWUiLCJmaWxlIjoibmV3LmpzP2VudHJ5Iiwic291cmNlUm9vdCI6Ii9Vc2Vycy9yb2JlcnRvY2FudHUvdWRlbXlfZXRoX2NvdXJzZS9kZWNlbnRyYWxpemVkX2Nyb3dkX2Z1bmRpbmcifQ==

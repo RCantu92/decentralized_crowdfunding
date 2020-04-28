@@ -64,6 +64,12 @@ npm install --save semantic-ui-react
 npm install --save semantic-ui-css
 ```
 
+Next Routes
+
+```
+npm install --save next-routes
+```
+
 
 ## Running the tests
 
@@ -89,6 +95,7 @@ npm install --save semantic-ui-css
 * [MetaMask](https://metamask.io/) - Browser based wallet used to connect to the Ethereum mainnet as well as testnets.
 * [Infura](https://infura.io/) - API used to access the Ethereum and IPFS networks.
 * [Semantic UI React](https://react.semantic-ui.com/) - .
+* [Next Routes](https://github.com/fridays/next-routes) - Universal dynamic routes for Next.js.
 
 ## Authors
 

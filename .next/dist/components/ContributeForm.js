@@ -30,6 +30,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _semanticUiReact = require('semantic-ui-react');
 
+var _campaign = require('../ethereum/campaign.js');
+
+var _campaign2 = _interopRequireDefault(_campaign);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var _jsxFileName = '/Users/robertocantu/udemy_eth_course/decentralized_crowd_funding/components/ContributeForm.js';
@@ -39,39 +43,58 @@ var ContributeForm = function (_Component) {
     (0, _inherits3.default)(ContributeForm, _Component);
 
     function ContributeForm() {
+        var _ref;
+
+        var _temp, _this, _ret;
+
         (0, _classCallCheck3.default)(this, ContributeForm);
 
-        return (0, _possibleConstructorReturn3.default)(this, (ContributeForm.__proto__ || (0, _getPrototypeOf2.default)(ContributeForm)).apply(this, arguments));
+        for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+            args[_key] = arguments[_key];
+        }
+
+        return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = ContributeForm.__proto__ || (0, _getPrototypeOf2.default)(ContributeForm)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+            value: ''
+        }, _this.onSubmit = function (event) {
+            event.preventDefault();
+
+            var campaign = (0, _campaign2.default)(_this.props.address);
+        }, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
     }
 
     (0, _createClass3.default)(ContributeForm, [{
         key: 'render',
         value: function render() {
-            return _react2.default.createElement(_semanticUiReact.Form, {
-                __source: {
+            var _this2 = this;
+
+            return _react2.default.createElement(_semanticUiReact.Form, { onSubmit: this.onSubmit, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 7
+                    lineNumber: 18
                 }
             }, _react2.default.createElement(_semanticUiReact.Form.Field, {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 8
+                    lineNumber: 19
                 }
             }, _react2.default.createElement('label', {
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 9
+                    lineNumber: 20
                 }
             }, 'Amount to contribute'), _react2.default.createElement(_semanticUiReact.Input, {
+                value: this.state.value,
+                onChange: function onChange(event) {
+                    return _this2.setState({ value: event.target.value });
+                },
                 label: 'ether',
                 labelPosition: 'right',
                 __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 11
+                    lineNumber: 22
                 }
             })), _react2.default.createElement(_semanticUiReact.Button, { primary: true, __source: {
                     fileName: _jsxFileName,
-                    lineNumber: 16
+                    lineNumber: 29
                 }
             }, 'Contribute!'));
         }
@@ -81,4 +104,4 @@ var ContributeForm = function (_Component) {
 }(_react.Component);
 
 exports.default = ContributeForm;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvQ29udHJpYnV0ZUZvcm0uanMiXSwibmFtZXMiOlsiUmVhY3QiLCJDb21wb25lbnQiLCJGb3JtIiwiSW5wdXQiLCJNZXNzYWdlIiwiQnV0dG9uIiwiQ29udHJpYnV0ZUZvcm0iXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O0FBQUEsQUFBTyxBQUFTOzs7O0FBQ2hCLEFBQVMsQUFBTSxBQUFPLEFBQVM7Ozs7Ozs7SSxBQUV6Qjs7Ozs7Ozs7Ozs7aUNBQ08sQUFDTDttQ0FDSSxBQUFDOzs4QkFBRDtnQ0FBQSxBQUNJO0FBREo7QUFBQSxhQUFBLGtCQUNLLGNBQUQsc0JBQUEsQUFBTTs7OEJBQU47Z0NBQUEsQUFDSTtBQURKO0FBQUEsK0JBQ0ksY0FBQTs7OEJBQUE7Z0NBQUE7QUFBQTtBQUFBLGVBREosQUFDSSxBQUVBLHlDQUFBLEFBQUM7dUJBQUQsQUFDVSxBQUNOOytCQUZKLEFBRWtCOzs4QkFGbEI7Z0NBSlIsQUFDSSxBQUdJLEFBS0o7QUFMSTtBQUNJLGlDQUlSLEFBQUMseUNBQU8sU0FBUjs4QkFBQTtnQ0FBQTtBQUFBO2VBVlIsQUFDSSxBQVNJLEFBS1g7Ozs7O0FBR0wsQSxBQXBCNkI7O2tCQW9CN0IsQUFBZSIsImZpbGUiOiJDb250cmlidXRlRm9ybS5qcyIsInNvdXJjZVJvb3QiOiIvVXNlcnMvcm9iZXJ0b2NhbnR1L3VkZW15X2V0aF9jb3Vyc2UvZGVjZW50cmFsaXplZF9jcm93ZF9mdW5kaW5nIn0=
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbXBvbmVudHMvQ29udHJpYnV0ZUZvcm0uanMiXSwibmFtZXMiOlsiUmVhY3QiLCJDb21wb25lbnQiLCJGb3JtIiwiSW5wdXQiLCJNZXNzYWdlIiwiQnV0dG9uIiwiQ2FtcGFpZ24iLCJDb250cmlidXRlRm9ybSIsInN0YXRlIiwidmFsdWUiLCJvblN1Ym1pdCIsImV2ZW50IiwicHJldmVudERlZmF1bHQiLCJjYW1wYWlnbiIsInByb3BzIiwiYWRkcmVzcyIsInNldFN0YXRlIiwidGFyZ2V0Il0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLEFBQU8sQUFBUzs7OztBQUNoQixBQUFTLEFBQU0sQUFBTyxBQUFTOztBQUMvQixBQUFPLEFBQWM7Ozs7Ozs7OztJLEFBRWY7Ozs7Ozs7Ozs7Ozs7O2dPLEFBQ0Y7bUIsQUFBUSxBQUNHO0FBREgsQUFDSixpQixBQUdKLFdBQVcsVUFBQSxBQUFDLE9BQVUsQUFDbEI7a0JBQUEsQUFBTSxBQUVOOztnQkFBTSxXQUFXLHdCQUFTLE1BQUEsQUFBSyxNQUEvQixBQUFpQixBQUFvQixBQUN4QztBOzs7OztpQ0FFUTt5QkFDTDs7bUNBQ0ksQUFBQyx1Q0FBSyxVQUFVLEtBQWhCLEFBQXFCOzhCQUFyQjtnQ0FBQSxBQUNJO0FBREo7YUFBQSxrQkFDSyxjQUFELHNCQUFBLEFBQU07OzhCQUFOO2dDQUFBLEFBQ0k7QUFESjtBQUFBLCtCQUNJLGNBQUE7OzhCQUFBO2dDQUFBO0FBQUE7QUFBQSxlQURKLEFBQ0ksQUFFQSx5Q0FBQSxBQUFDO3VCQUNVLEtBQUEsQUFBSyxNQURoQixBQUNzQixBQUNsQjswQkFBWSx5QkFBQTsyQkFBUyxPQUFBLEFBQUssU0FBUyxFQUFFLE9BQU8sTUFBQSxBQUFNLE9BQXRDLEFBQVMsQUFBYyxBQUFzQjtBQUY3RCxBQUdJO3VCQUhKLEFBR1UsQUFDTjsrQkFKSixBQUlrQjs7OEJBSmxCO2dDQUpSLEFBQ0ksQUFHSSxBQU9KO0FBUEk7QUFDSSxpQ0FNUixBQUFDLHlDQUFPLFNBQVI7OEJBQUE7Z0NBQUE7QUFBQTtlQVpSLEFBQ0ksQUFXSSxBQUtYOzs7OztBQUdMLEEsQUFoQzZCOztrQkFnQzdCLEFBQWUiLCJmaWxlIjoiQ29udHJpYnV0ZUZvcm0uanMiLCJzb3VyY2VSb290IjoiL1VzZXJzL3JvYmVydG9jYW50dS91ZGVteV9ldGhfY291cnNlL2RlY2VudHJhbGl6ZWRfY3Jvd2RfZnVuZGluZyJ9

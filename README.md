@@ -55,6 +55,20 @@ Once deployed, you should see message like the following:
 
 *(Note: This is a different deployed address than the listed at the end of this README.)
 
+To now render a local instance of contract on your browser, navigate to the root directory.
+
+Once inside, run the following in the command line:
+
+```
+npm run dev
+```
+
+After running the above command, on your web browser navigate to [localhost:3000](http://localhost:3000/).
+
+The following gif demonstrates navigating the decentralized crowd funding app.
+
+![](./images/decentralized_crowd_funding_demo.gif)
+
 This contract is deployed on the rinkeby testnet under address [0xd754caE84C000cAf47644F1449274D53282814d8](https://rinkeby.etherscan.io/address/0xd754cae84c000caf47644f1449274d53282814d8).
 
 ## Built With

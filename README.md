@@ -25,6 +25,8 @@ npm init
 ```
 This will set up the project with all of its dependencies.
 
+You will also need to install [MetaMask](https://metamask.io/) on your browser,
+
 ## Running the tests
 
 

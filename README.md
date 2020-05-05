@@ -29,7 +29,17 @@ You will also need to install [MetaMask](https://metamask.io/) on your browser,
 
 ## Running the tests
 
+Navigate into the lottery-smart-contract/ directory, and once in there, run the
+following in the command line:
 
+```
+npm run test
+```
+If all the tests are passed, you should an output similar to the following:
+
+![](./images/npm_test_output.png)
+
+*(Note: the warning should not appear and will be looked into further.)
 
 ## Deployment
 

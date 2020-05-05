@@ -43,7 +43,17 @@ If all the tests are passed, you should an output similar to the following:
 
 ## Deployment
 
+To deploy the lottery smart contract onto the Rinkeby Ethereum testnet, you would navigate back to the lottery-smart-contract directory and run the following in the command line:
 
+```
+node deploy.js
+```
+
+Once deployed, you should see message like the following:
+
+![](./images/node_deploy_output.png)
+
+*(Note: This is a different deployed address than the listed at the end of this README.)
 
 This contract is deployed on the rinkeby testnet under address [0xd754caE84C000cAf47644F1449274D53282814d8](https://rinkeby.etherscan.io/address/0xd754cae84c000caf47644f1449274d53282814d8).
 

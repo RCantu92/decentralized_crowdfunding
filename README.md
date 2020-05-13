@@ -1,10 +1,14 @@
 # Decentralized Crowd Funding
 
-This project is a decentralized crowd funding platform. How it works, is a user would select a campaign that they want to support by contributing Ethereum's native token, ether.
+This project is a decentralized crowd funding platform, similar to [Kickstarter](https://www.kickstarter.com/). Normanlly, on Kickstarter, money is pledged to a campaign, which is in turn used to create the product. However, since the contributors to a campaign are essentially hands-off in that process, that does not prevent bad actors or malicious people from taking off with the campaign funds.
 
-Once the campaign's minimum threshold is met, the contributors are then able to vote on "requests" made by the manager of the account as to how they want to spend the funds.
+To combat this, this project aims to give contributors a say in how the campaign funds, in this case testnet ether, are used. How this is implemented is that campaign managers have to submit requests for how they may spend the campaign funds. The contributors would then have a vote in whether the request is approved.
 
-This allows contributors that have some say into how the funds are used in the project and prevents the campaign managers from taking the funds for themselves.
+For a request to be approved, it would need to have a more than 50% majority. This would then allow the funds to be used as requested.
+
+Below is a GIF of the contract in action.
+
+![](./images/decentralized_crowd_funding_demo.gif)
 
 ## Getting Started
 
@@ -12,20 +16,19 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-First, navigate to the directory where you wish to clone the github repo. Next, copy the text under the "clone or download" button above. In your command line, run the following command:
+To begin, first navigate to your desired local directory so you can clone the project repo. Once there, in the terminal, run the following command:
 
 ```
-git clone {copied text}
+git clone https://github.com/RCantu92/decentralized_crowdfunding.git
+```
+Once you have cloned the project repo, run the following command to install all of the necessary dependencies:
+```
+npm install
 ```
 
-After you have successfully cloned the repo locally, run the following command in the command line:
+The dependencies, along with other tools used, are listed under "Built With."
 
-```
-npm init
-```
-This will set up the project with all of its dependencies.
-
-You will also need to install [MetaMask](https://metamask.io/) on your browser,
+In addition to this, you will also need to install the [MetaMask](https://metamask.io/) browser extension.
 
 ## Running the tests
 
@@ -63,13 +66,9 @@ Once inside, run the following in the command line:
 npm run dev
 ```
 
-After running the above command, on your web browser navigate to [localhost:3000](http://localhost:3000/).
+After running the above command, on your web browser navigate to [localhost:3000](http://localhost:3000/). The GIF previously shown demonstrates the process of navigating the decentralized crowd funding app.
 
-The following gif demonstrates navigating the decentralized crowd funding app.
-
-![](./images/decentralized_crowd_funding_demo.gif)
-
-This contract is deployed on the rinkeby testnet under address [0xd754caE84C000cAf47644F1449274D53282814d8](https://rinkeby.etherscan.io/address/0xd754cae84c000caf47644f1449274d53282814d8).
+Lastly, this contract is deployed on the rinkeby testnet under address [0xd754caE84C000cAf47644F1449274D53282814d8](https://rinkeby.etherscan.io/address/0xd754cae84c000caf47644f1449274d53282814d8).
 
 ## Built With
 

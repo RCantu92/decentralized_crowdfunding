@@ -49,7 +49,7 @@ If all the tests are passed, you should an output similar to the following:
 To deploy the lottery smart contract onto the Rinkeby Ethereum testnet, you would navigate back to the lottery-smart-contract directory and run the following in the command line:
 
 ```
-node deploy.js
+node ethereum/deploy.js
 ```
 
 Once deployed, you should see message like the following:
@@ -68,7 +68,7 @@ npm run dev
 
 After running the above command, on your web browser navigate to [localhost:3000](http://localhost:3000/). The GIF previously shown demonstrates the process of navigating the decentralized crowd funding app.
 
-Lastly, this contract is deployed on the rinkeby testnet under address [0xd754caE84C000cAf47644F1449274D53282814d8](https://rinkeby.etherscan.io/address/0xd754cae84c000caf47644f1449274d53282814d8).
+Lastly, this contract is deployed on the rinkeby testnet under address [0x51C10071B74640587C055e6F919d3218443e19BA](https://rinkeby.etherscan.io/address/0x51C10071B74640587C055e6F919d3218443e19BA).
 
 ## Built With
 
@@ -76,6 +76,7 @@ Lastly, this contract is deployed on the rinkeby testnet under address [0xd754ca
 * [Solidity, v.0.4.17](https://solidity.readthedocs.io/en/v0.4.17/) - Smart Contract programming language used.
 * [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript) - Programming language used.
 * [solc, v.0.4.17](https://github.com/ethereum/solc-js) - Module for compiling the Solidity programming language.
+* [dotenv](https://www.npmjs.com/package/dotenv) - Dotenv is a zero-dependency module that loads environment variables from a .env file into process.env.
 * [Mocha](https://mochajs.org/) - JavaScript test framework.
 * [Ganache CLI](https://www.npmjs.com/package/ganache-cli) - The command line version of Ganache, your personal blockchain for Ethereum development.
 * [fs-extra](https://github.com/jprichardson/node-fs-extra) - File system methods that aren't included in the native 'fs' module and adds promise support to the fs methods.

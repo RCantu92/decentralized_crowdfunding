@@ -1,3 +1,5 @@
+// Import environmental variables from .env file
+require('dotenv').config()
 // Load in the hdwallet module
 const HDWalletProvider = require('truffle-hdwallet-provider');
 // Load in the web3 module
@@ -6,15 +8,18 @@ const Web3 = require('web3');
 // contract from JSON file.
 const compiledFactory = require('./build/CampaignFactory.json');
 
+// instantiate new variable of mnemonic phrase to bring in mnemonic
+// phrase
+const mnemoic = process.env.MNEMONIC;
+
 /**
  * @dev Declaring a new variable instance of HDWalletProvider.
- * @param 'river tag balcony picture boil kind drop pig polar save poem time'
- * which account to use to provide the ether. (NOTE: SAVE THE SEED UNDER A HIDDEN FILE!!!)
+ * @param 'mnemonic' mnemonic phrase of the account deploying the contract.
  * @param 'https://rinkeby.infura.io/v3/38c9a150380f4b63be2adf7c4c5501bf'
  * Specifies which outside node we are going to connect to. (Ethereum-Rinkeby)
  */
 const provider = new HDWalletProvider(
-    'river tag balcony picture boil kind drop pig polar save poem time',
+    mnemoic,
     'https://rinkeby.infura.io/v3/38c9a150380f4b63be2adf7c4c5501bf'
 );
 

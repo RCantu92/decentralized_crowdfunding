@@ -56,8 +56,6 @@ Once deployed, you should see message like the following:
 
 ![](./images/node_deploy_output.png)
 
-*(Note: This is a different deployed address than the listed at the end of this README.)
-
 To now render a local instance of contract on your browser, navigate to the root directory.
 
 Once inside, run the following in the command line:
